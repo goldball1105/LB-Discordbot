@@ -4,9 +4,6 @@ module.exports = {
     async execute(interaction, client) {
         const name = interaction.fields.getTextInputValue('vote-title');
         const about = interaction.fields.getTextInputValue('vote-des');
-
-        let 
-
         const embed = new EmbedBuilder()
             .setTitle(`${name}`)
             .setDescription(`${about}\n`)
@@ -15,7 +12,7 @@ module.exports = {
                 { name: `———<:downvote:1051138166096154674>———`, value: `人數：\`0\``, inline: true }
             )
             .setTimestamp()
-//==============
+
         const upvote = new ButtonBuilder()
             .setCustomId('upvote')
             .setLabel('贊成')
