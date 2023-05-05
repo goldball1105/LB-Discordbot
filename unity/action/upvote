@@ -1,6 +1,8 @@
 const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js')
+const {  } = require('')
+
 module.exports = {
-    customId: 'vote',
+    customId: 'upvote',
     async execute(interaction, client) {
         const name = interaction.fields.getTextInputValue('vote-title');
         const about = interaction.fields.getTextInputValue('vote-des');
@@ -31,6 +33,5 @@ module.exports = {
             .addComponents(upvote, downvote)
 
         await interaction.reply({ embeds: [embed], components: [row] })
-        return embed;
     }
 }
