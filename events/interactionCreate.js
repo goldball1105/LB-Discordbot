@@ -30,7 +30,7 @@ module.exports = {
 				await action.execute(interaction, client);
 			} catch (error) {
 				console.error(error);
-				await interaction.reply({ content: 'An error occurred while handling this button interaction.', ephemeral: true });
+				await interaction.reply({ content: 'An error occurred while handling this interaction.', ephemeral: true });
 			}
 		}
 
