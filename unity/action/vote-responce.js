@@ -31,6 +31,5 @@ module.exports = {
             .addComponents(upvote, downvote)
 
         await interaction.reply({ embeds: [embed], components: [row] })
-        return embed;
     }
-}
+};
