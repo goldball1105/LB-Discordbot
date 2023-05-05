@@ -4,12 +4,16 @@ module.exports = {
     async execute(interaction, client) {
         const name = interaction.fields.getTextInputValue('vote-title');
         const about = interaction.fields.getTextInputValue('vote-des');
+
+        let upvotec = 0;
+        let downvotec = 0;
+
         const embed = new EmbedBuilder()
             .setTitle(`${name}`)
             .setDescription(`${about}\n`)
             .addFields(
-                { name: `———<:upvote:1051138113168212029>———`, value: `人數：\`0\``, inline: true },
-                { name: `———<:downvote:1051138166096154674>———`, value: `人數：\`0\``, inline: true }
+                { name: `———<:upvote:1051138113168212029>———`, value: `人數：\`${upvotec}\``, inline: true },
+                { name: `———<:downvote:1051138166096154674>———`, value: `人數：\`${downvotec}\``, inline: true }
             )
             .setTimestamp()
 
@@ -27,5 +31,8 @@ module.exports = {
             .addComponents(upvote, downvote)
 
         await interaction.reply({ embeds: [embed], components: [row] })
+
+        //投票系統
+
     }
 }
