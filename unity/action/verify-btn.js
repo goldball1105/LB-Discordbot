@@ -25,7 +25,7 @@ module.exports = {
             interaction.member.roles.remove(verifyRoletwo);
 
           } else {
-
+            
             await interaction.reply({ embeds: [embedsuccess], ephemeral: true,});
 
             setTimeout(() => {
@@ -36,4 +36,3 @@ module.exports = {
     }
 
 }
-////33
