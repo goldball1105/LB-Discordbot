@@ -34,7 +34,6 @@ module.exports = {
             .addComponents(upvote, downvote)
 
         await interaction.editReply({ components: [row] })
-        await interaction.
 //=============================
         
     }
