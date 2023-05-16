@@ -1,4 +1,5 @@
 const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js')
+
 module.exports = {
     customId: 'vote',
     async execute(interaction, client) {
@@ -17,20 +18,23 @@ module.exports = {
             )
             .setTimestamp()
 
+        const replything = await interaction.reply({ embeds: [embed], fetchReply: true });
+
         const upvote = new ButtonBuilder()
-            .setCustomId('upvote')
+            .setCustomId(`upvote-${replything.id}`)
             .setLabel('贊成')
             .setStyle(ButtonStyle.Success)
 
         const downvote = new ButtonBuilder()
-            .setCustomId('downvote')
+            .setCustomId(`downvote-${replything.id}`)
             .setLabel('反對')
             .setStyle(ButtonStyle.Danger)
 
         const row = new ActionRowBuilder()
             .addComponents(upvote, downvote)
 
-        await interaction.reply({ embeds: [embed], components: [row] })
+        await interaction.editReply({ components: [row] })
+        await interaction.
 //=============================
         
     }
