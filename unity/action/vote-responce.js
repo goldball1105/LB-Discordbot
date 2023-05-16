@@ -9,10 +9,10 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setTitle(`${name}`)
             .setDescription(`${about}\n`)
-            .addFields([
-                { name: `—<:upvote:1051138113168212029> 人數`, value: `0`, inline: true },
-                { name: `—<:downvote:1051138166096154674> 人數`, value: `0`, inline: true }
-            ])
+            .addFields(
+                { name: `———<:upvote:1051138113168212029>———`, value: `人數：\`0\``, inline: true },
+                { name: `———<:downvote:1051138166096154674>———`, value: `人數：\`0\``, inline: true }
+            )
             .setTimestamp()
 
         const replything = await interaction.reply({ embeds: [embed], fetchReply: true });
@@ -31,6 +31,6 @@ module.exports = {
             .addComponents(upvote, downvote)
 
         await interaction.editReply({ components: [row] })
-        
+
     }
 };
