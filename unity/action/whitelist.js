@@ -25,11 +25,18 @@ module.exports = {
         .setLabel('你玩多久了(單位年計算)')
         .setStyle(TextInputStyle.Short);
 
+        const saysome = new TextInputBuilder()
+        .setCustomId('saysome')
+        .setRequired(true)
+        .setLabel('有沒有啥想跟大家說')
+        .setStyle(TextInputStyle.Paragraph);
+
         const actionone = new ActionRowBuilder().addComponents(mc)
         const actiontwo = new ActionRowBuilder().addComponents(dc)
         const actionthr = new ActionRowBuilder().addComponents(hlong)
+        const actionths = new ActionRowBuilder().addComponents(saysome)
 
-        modal.addComponents(actionone, actiontwo, actionthr)
+        modal.addComponents(actionone, actiontwo, actionthr, actionths)
         interaction.showModal(modal)
 
     }
