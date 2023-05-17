@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle } = require('discord.js')
+const { ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle, PermissionsBitField } = require('discord.js')
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -7,6 +7,11 @@ module.exports = {
     .setDescription('創建一個投票'),
 
     async execute(interaction){
+
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+            return interaction.reply({ content: `**你沒有創建投票的權限**`, ephemeral: true })
+        }
+
         const modal = new ModalBuilder()
         .setTitle('創建一個投票吧')
         .setCustomId('vote');
