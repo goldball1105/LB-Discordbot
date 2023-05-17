@@ -1,36 +1,36 @@
-const { EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js')
+const { ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle } = require('discord.js')
 
 module.exports = {
-    customId: 'vote',
+    customId: 'wlform',
     async execute(interaction, client) {
-        const name = interaction.fields.getTextInputValue('vote-title');
-        const about = interaction.fields.getTextInputValue('vote-des');
+        const modal = new ModalBuilder()
+        .setTitle('一些基礎問題')
+        .setCustomId('wlsform');
 
-        const embed = new EmbedBuilder()
-            .setTitle(`${name}`)
-            .setDescription(`${about}\n`)
-            .addFields(
-                { name: `———<:upvote:1051138113168212029>———`, value: `人數：\`0\``, inline: true },
-                { name: `———<:downvote:1051138166096154674>———`, value: `人數：\`0\``, inline: true }
-            )
-            .setTimestamp()
+        const mc = new TextInputBuilder()
+        .setCustomId('mc-id')
+        .setRequired(true)
+        .setLabel('你的MinecraftId')
+        .setStyle(TextInputStyle.Short);
 
-        const replything = await interaction.reply({ embeds: [embed], fetchReply: true });
+        const dc = new TextInputBuilder()
+        .setCustomId('dc-id')
+        .setRequired(true)
+        .setLabel('你的DiscordId')
+        .setStyle(TextInputStyle.Short);
 
-        const upvote = new ButtonBuilder()
-            .setCustomId(`vote-up-${replything.id}`)
-            .setLabel('贊成')
-            .setStyle(ButtonStyle.Success)
+        const hlong = new TextInputBuilder()
+        .setCustomId('hlong')
+        .setRequired(true)
+        .setLabel('你玩多久了(單位年計算)')
+        .setStyle(TextInputStyle.Short);
 
-        const downvote = new ButtonBuilder()
-            .setCustomId(`vote-down-${replything.id}`)
-            .setLabel('反對')
-            .setStyle(ButtonStyle.Danger)
+        const actionone = new ActionRowBuilder().addComponents(mc)
+        const actiontwo = new ActionRowBuilder().addComponents(dc)
+        const actionthr = new ActionRowBuilder().addComponents(hlong)
 
-        const row = new ActionRowBuilder()
-            .addComponents(upvote, downvote)
-
-        await interaction.editReply({ components: [row] })
+        modal.addComponents(actionone, actiontwo, actionthr)
+        interaction.showModal(modal)
 
     }
 };
