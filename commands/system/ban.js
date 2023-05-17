@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { PermissionsBitField, EmbedBuilder } = require('discord.js')
+const { logchannel } = require('../../config.json')
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -28,9 +29,17 @@ module.exports = {
                 .setColor(0xffa600)
                 .setTitle('封鎖使用者')
                 .setDescription(`:white_check_mark: 已成功封鎖 ${user}`)
+            
+            const log = new EmbedBuilder()
+                .setColor(0x34ebe5)
+                .setTitle('封鎖使用者')
+                .setDescription(`執行者：<@${interaction.user.id}>\n被封者：<@${user}>\n使用者Id：${user.id}`)
 
             await baner.ban();
             interaction.reply({ embeds: [embed] });
+
+            const channel = interaction.guild.channels.cache.get(logchannel);
+            channel.send({ embeds: [log] })
 
         } catch (error) {
 
@@ -40,7 +49,7 @@ module.exports = {
                 .setDescription(`**錯誤資訊：**你輸入的使用者不再伺服器中\n(或者已被封鎖)`)
                 .setTimestamp()
 
-            interaction.reply({ embeds: [embed] , ephemeral: true })
+            interaction.reply({ embeds: [embed], ephemeral: true })
 
         }
 

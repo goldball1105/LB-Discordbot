@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { PermissionsBitField, EmbedBuilder, GuildBanManager } = require('discord.js')
+const { logchannel } = require('../../config.json')
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -29,20 +30,28 @@ module.exports = {
                 .setTitle('解封使用者')
                 .setDescription(`:white_check_mark: 已成功解封 ${user}`)
 
+            const log = new EmbedBuilder()
+                .setColor(0x34ebe5)
+                .setTitle('封鎖使用者')
+                .setDescription(`執行者：<@${interaction.user.id}>\n被解者：<@${user}>\n使用者Id：${user.id}`)
+
             interaction.reply({ embeds: [embed] });
 
-        } catch(error) {
+            const channel = interaction.guild.channels.cache.get(logchannel);
+            channel.send({ embeds: [log] })
 
-        const embed = new EmbedBuilder()
-            .setColor(0xffa600)
-            .setTitle('出現錯誤')
-            .setDescription(`**錯誤資訊：**你輸入的使用者不再伺服器中\n(或者已被封鎖)`)
-            .setTimestamp()
+        } catch (error) {
 
-        interaction.reply({ embeds: [embed], ephemeral: true })
+            const embed = new EmbedBuilder()
+                .setColor(0xffa600)
+                .setTitle('出現錯誤')
+                .setDescription(`**錯誤資訊：**你輸入的使用者不再伺服器中\n(或者已被封鎖)`)
+                .setTimestamp()
 
-    }
+            interaction.reply({ embeds: [embed], ephemeral: true })
+
+        }
 
 
-},
+    },
 };
