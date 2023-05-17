@@ -10,7 +10,7 @@ module.exports = {
             .setColor("#ff8b33")
             .setAuthor({ name: '玩家退出 D:', iconURL: 'https://i.imgur.com/WemUkDT.png' })
             .setFields(
-                { name: '\u200B', value: `**再見** <@${member.user.id}> **後會有期**` },
+                { name: '------------------------------------------------', value: `**再見** <@${member.user.id}> **後會有期**` },
                 { name: '\u200B', value: `當你改變想法時...\n去我的私人訊息查看邀**請訊連結**吧` }
             )
             .setTimestamp()

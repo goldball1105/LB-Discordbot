@@ -9,9 +9,9 @@ module.exports = {
 
         const embed = new EmbedBuilder()
             .setColor(0xf78d02)
-            .setAuthor({ name: '玩家加入!', iconURL: 'https://i.imgur.com/tDr6KrN.png' })
+            .setAuthor({ name: '玩家加入 :D', iconURL: 'https://i.imgur.com/tDr6KrN.png' })
             .setFields(
-                { name: '\u200B', value: `**歡迎** <@${member.user.id}> **來到休閒生存！**` },
+                { name: '------------------------------------------------', value: `**歡迎** <@${member.user.id}> **來到休閒生存！**` },
                 { name: '\u200B', value: `在加入伺服器前請先去 <#${ruleid}>\n閱讀**基礎規則**在遊玩喔` }
             )
             .setTimestamp()
