@@ -26,8 +26,8 @@ module.exports = {
             .setColor(0xff8b33)
             .setTimestamp()
             .setFields(
-                { name: '這是伺服器的邀請連結，以防你不小心退出等事件發生', value: 'https://discord.gg/AzeWSgwG' },
-                { name: '\u200B', value: '如果邀請連結失效可以請加入\`白龍#7610\`好友要求一個新的~' }
+                { name: '這是伺服器的邀請連結，以防你不小心退出等事件發生', value: 'https://laid-back.xyz/discord' },
+                { name: '\u200B', value: '如果邀請連結失效可以在這裡輸入指令\`/dclink\`生產一個新連結' }
             )
 
         member.send({ embeds: [dmMessage] }).catch(err => { console.log('私人訊息關閉') })
