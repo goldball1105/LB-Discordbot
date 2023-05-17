@@ -32,8 +32,8 @@ module.exports = {
 
             const log = new EmbedBuilder()
                 .setColor(0x34ebe5)
-                .setTitle('封鎖使用者')
-                .setDescription(`執行者：<@${interaction.user.id}>\n被解者：<@${user}>\n使用者Id：${user.id}`)
+                .setTitle('解封使用者')
+                .setDescription(`執行者：<@${interaction.user.id}>\n被解者：${user}\n使用者Id：${user.id}`)
 
             interaction.reply({ embeds: [embed] });
 

@@ -32,8 +32,8 @@ module.exports = {
 
             const log = new EmbedBuilder()
                 .setColor(0x34ebe5)
-                .setTitle('封鎖使用者')
-                .setDescription(`執行者：<@${interaction.user.id}>\n被解者：<@${user}>\n使用者Id：${user.id}`)
+                .setTitle('踢除使用者')
+                .setDescription(`執行者：<@${interaction.user.id}>\n被解者：${user}\n使用者Id：${user.id}`)
 
             await kicker.kick();
             interaction.reply({ embeds: [embed] });
