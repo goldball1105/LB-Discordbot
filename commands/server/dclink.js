@@ -6,7 +6,7 @@ module.exports = {
         .setName('dclink')
         .setDescription('產生一個新連結'),
 
-    async execute(interaction, client) {
+    async execute(interaction) {
         const channel = interaction.guild.channels.cache.filter((channel) => channel.type === ChannelType.GuildText).first();
         const invite = await channel.createInvite({ maxAge: 86400, maxUses: 1 })
 

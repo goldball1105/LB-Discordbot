@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { EmbedBuilder, embedLength } = require('@discordjs/builders')
+const { EmbedBuilder } = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
