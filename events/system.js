@@ -24,9 +24,10 @@ module.exports = {
 
         const uvote = voteembed.fields[0];
         const dvote = voteembed.fields[1];
+        const avote = voteembed.fields[0];
 
         const numberPattern = /\d+/;
-        let newup, newdown;
+        let newup, newdown, newa;
 
         switch (array[1]) {
             case 'up': {
@@ -54,11 +55,11 @@ module.exports = {
             }
                 break;
             case 'anc': {
-                const match = uvote.value.match(numberPattern);
+                const match = avote.value.match(numberPattern);
                 if (match) {
                     const oldValue = parseInt(match[0]);
-                    newup = oldValue + 1;
-                    uvote.value = uvote.value.replace(numberPattern, newup);
+                    newa = oldValue + 1;
+                    avote.value = avote.value.replace(numberPattern, newa);
                 }
 
                 interaction.reply({ content: '給你一個讚', ephemeral: true });
