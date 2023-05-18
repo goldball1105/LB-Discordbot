@@ -12,7 +12,7 @@
 > _A: The answer is **NO**, because I know everyone want there brand, so I don't want people spend time on this thing, uh...I mean, if you enjoy coding then have fun, for those who don't like to code, hope this can help you alot XD_
 ---
 ### This bot still have so many problem
-so if you are using it for big server, **DON'T USE IT IR YOUR SERVER WILL DIE**
+so if you are using it for big server, **DON'T USE IT, OR YOUR SERVER WILL DIE**
 
 #### Last if you have any problem with bot
 ```
