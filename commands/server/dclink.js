@@ -4,7 +4,8 @@ const { guildId } = require('../../config.json')
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('dclink')
-        .setDescription('產生一個新連結'),
+        .setDescription('產生一個新連結')
+        .setDMPermission(true),
 
     async execute(interaction, client) {
         const guild = client.guilds.cache.get(guildId)
