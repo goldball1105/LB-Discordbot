@@ -19,7 +19,7 @@ module.exports = {
         const replything = await interaction.channel.send({ embeds: [embed], fetchReply: true });
 
         const upvote = new ButtonBuilder()
-            .setCustomId(`vote-up-${replything.id}`)
+            .setCustomId(`vote-anc-${replything.id}`)
             .setLabel('收到!')
             .setStyle(ButtonStyle.Success)
 
