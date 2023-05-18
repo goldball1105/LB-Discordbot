@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@discordjs/builders": "^1.6.1",
+    "@discordjs/rest": "^1.7.1",
+    "discord.js": "^14.9.0",
+    "fs": "^0.0.1-security"
+  },
+  "name": "discord-laidback-bot",
+  "version": "1.0.0",
+  "description": "Discord of laidback smp",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Goldball1105",
+  "license": "UNLICENSED"
+}

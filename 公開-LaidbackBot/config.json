@@ -1,0 +1,24 @@
+{
+	"clientId": "your id or token",
+	"guildId": "your id or token",
+	"token": "your id or token",
+
+	"welcomeChannel": "your id or token",
+	"VerifyChannel": "your id or token",
+	"whitelistChannel": "your id or token",
+	"RuleChannel": "your id or token",
+	"whitelistlogchannel": "your id or token",
+	"logchannel": "your id or token",
+
+	"//": "do what say in ./function/veritfy.js file",
+	"verifyMsgId": "your id or token",
+	"//": "samething",
+	"whitelistMsgId": "your id or token",
+
+	"emojiverify": "💠",
+	"emojiwhitelist": "🔗",
+
+	"verifyRoleone": "your id or token",
+	"verifyRoletwo": "your id or token",
+	"BotRoleId": "your id or token"
+}
