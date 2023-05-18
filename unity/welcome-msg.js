@@ -1,4 +1,4 @@
-const { EmbedBuilder, ClientUser } = require('@discordjs/builders')
+const { EmbedBuilder } = require('@discordjs/builders')
 const { welcomeChannel } = require('../config.json')
 
 module.exports = {
