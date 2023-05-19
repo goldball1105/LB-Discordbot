@@ -28,7 +28,7 @@ module.exports = {
                 model: 'text-davinci-003',
                 max_tokens: 2048,
                 temperature: 0.5,
-                prompt: question
+                prompt: question + "#zh_tw"
             })
 
             const embed = new EmbedBuilder()
