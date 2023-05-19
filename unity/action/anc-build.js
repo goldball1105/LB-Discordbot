@@ -5,14 +5,15 @@ module.exports = {
     async execute(interaction, client) {
         await interaction.reply({ content: '已發送公告摟', ephemeral: true })
 
+        const emoji = '<:verified:1051138246626791505>';
         const name = interaction.fields.getTextInputValue('anc-title');
         const about = interaction.fields.getTextInputValue('anc-des');
 
         const embed = new EmbedBuilder()
-            .setTitle(`<:announcement:1051132059801894972>${name}`)
-            .setDescription(`${about}\n`)
+            .setTitle(`<:announcement:1051132059801894972> - ${name}`)
+            .setDescription(`\n${about}\n`)
             .addFields(
-                { name: `<:verified:1051138246626791505>了解了~`, value: `人數：\`0\``, inline: true }
+                { name: `${emoji}`, value: `勾勾：\`0\`\n---------------------------------------`, inline: true },
             )
             .setTimestamp()
 
