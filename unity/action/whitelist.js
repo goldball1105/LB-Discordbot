@@ -27,7 +27,8 @@ module.exports = {
             .setCustomId('dc-id')
             .setRequired(true)
             .setLabel('你的DiscordId')
-            .setStyle(TextInputStyle.Short);
+            .setStyle(TextInputStyle.Short)
+            .setPlaceholder(interaction.user.tag);
 
         const hlong = new TextInputBuilder()
             .setCustomId('hlong')
@@ -39,6 +40,7 @@ module.exports = {
             .setCustomId('saysome')
             .setRequired(true)
             .setLabel('有沒有啥想跟大家說')
+            .setPlaceholder('其實Moordi是Gay!')
             .setStyle(TextInputStyle.Paragraph);
 
         const actionone = new ActionRowBuilder().addComponents(mc)
