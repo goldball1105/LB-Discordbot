@@ -32,7 +32,7 @@ module.exports = {
             })
 
             const embed = new EmbedBuilder()
-                .setDescription(`\`\`\`${res.data.choices[0].text}\`\`\``)
+                .setDescription(`${res.data.choices[0].text}`)
                 .setTimestamp()
 
             await interaction.editReply({ embeds:[embed] })
