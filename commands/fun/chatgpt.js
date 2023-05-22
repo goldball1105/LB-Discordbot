@@ -39,7 +39,7 @@ module.exports = {
 
         } catch (error) {
             console.log(error)
-            return await interaction.editReply({ content:`出現錯誤`, ephemeral:true})
+            return await interaction.editReply({ content:`出現錯誤${error}`, ephemeral:true})
         }
 
 
