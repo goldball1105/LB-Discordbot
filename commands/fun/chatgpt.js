@@ -14,14 +14,14 @@ module.exports = {
         .setName('gpt')
         .setDescription('chatgpt command')
         .addStringOption(options => options
-            .setName('qustion')
+            .setName('question')
             .setDescription('想問的問題')
             .setRequired(true)
         ),
 
     async execute(interaction) {
         await interaction.deferReply();
-        const question = interaction.options.getString('qustion');
+        const question = interaction.options.getString('question');
 
         try {
             const res = await openai.createCompletion({
