@@ -14,19 +14,17 @@ module.exports = {
         .setName('clear')
         .setDescription('刪除訊息')
         .setDefaultMemberPermissions(0)
-        .addIntegerOption(option =>
-            option
-                .setName('刪除歷史天數')
-                .setDescription('設定要刪除的歷史紀錄，最多可以選擇刪除14天以內的記錄。')
-                .setMinValue(1)
-                .setMaxValue(14)
+        .addIntegerOption(option => option
+            .setName('刪除歷史天數')
+            .setDescription('設定要刪除的歷史紀錄，最多可以選擇刪除14天以內的記錄。')
+            .setMinValue(1)
+            .setMaxValue(14)
         )
-        .addIntegerOption(option =>
-            option
-                .setName('刪除歷史小時數')
-                .setDescription('設定要刪除的小時數')
-                .setMinValue(1)
-                .setMaxValue(24)
+        .addIntegerOption(option => option
+            .setName('刪除歷史小時數')
+            .setDescription('設定要刪除的小時數')
+            .setMinValue(1)
+            .setMaxValue(24)
         ),
     async execute(interaction) {
         const messagesToDelete = []; // 存储要删除的消息的集合
