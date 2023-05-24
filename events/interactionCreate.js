@@ -13,15 +13,18 @@ module.exports = {
 		const Action = {};
 
 		const command = interaction.client.commands.get(interaction.commandName);
-		const actionPath = path.join(__dirname, '..', 'unity', 'action');
+		const ActionFolderPath = path.join(__dirname, '..', 'unity', 'action');
+		const actionFolders = fs.readdirSync(ActionFolderPath);
 
-		fs.readdirSync(actionPath)
-			.filter(file => file.endsWith('.js'))
-			.forEach(file => {
-				const action = require(path.join(actionPath, file));
+		for (const folder of actionFolders) {
+			const actionPath = path.join(ActionFolderPath, folder);
+			const actionFiles = fs.readdirSync(actionPath).filter(file => file.endsWith('.js'));
+			for (const file of actionFiles) {
+				const filePath = path.join(actionPath, file);
+				const action = require(filePath);
 				Action[action.customId] = action;
-
-			});
+			}
+		}
 
 		const action = Action[interaction.customId];
 

@@ -1,4 +1,4 @@
-const { r5 } = require('../../config.json')
+const { r5 } = require('../../../config.json')
 
 module.exports = {
     customId: 'r5',

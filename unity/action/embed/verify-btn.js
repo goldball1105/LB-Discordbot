@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js')
-const { verifyRoleone, verifyRoletwo, VerifylogChannel } = require('../../config.json')
+const { verifyRoleone, verifyRoletwo, VerifylogChannel } = require('../../../config.json')
 module.exports = {
     customId: 'veritfy',
     async execute(interaction, client){

@@ -11,7 +11,6 @@ client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
 for (const folder of commandFolders) {
-
 	const commandsPath = path.join(foldersPath, folder);
 	const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 	for (const file of commandFiles) {
@@ -52,14 +51,22 @@ for (const file of unityFiles) {
 }
 //=====================================
 const buttonActions = {};
-const actionPath = path.join(__dirname, '.', 'unity', 'action');
-fs.readdirSync(actionPath)
-	.filter(file => file.endsWith('.js'))
-	.forEach(file => {
-		const action = require(path.join(actionPath, file));
-		buttonActions[action.customId] = action;
-		console.log(`load btn action:[${file}]`)
-		// console.log(buttonActions)
-	});
+const ActionFolderPath = path.join(__dirname, '.', 'unity', 'action');
+const actionFolders = fs.readdirSync(ActionFolderPath);
 
+for (const folder of actionFolders) {
+	const actionPath = path.join(ActionFolderPath, folder);
+	const actionFiles = fs.readdirSync(actionPath).filter(file => file.endsWith('.js'));
+	for (const file of actionFiles) {
+		const filePath = path.join(actionPath, file);
+		const action = require(filePath);
+		if ('customId' in action && 'execute' in action) {
+			buttonActions[action.customId] = action;
+			console.log(`load action:[${file}]`)
+		} else {
+			console.log(`[WARNING] The action at ${filePath} is missing a required "customid" or "execute" property.`);
+		}
+	}
+}
+//====================================
 client.login(token);

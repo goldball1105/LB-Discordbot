@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require('discord.js')
-const { whitelistlogchannel } = require('../../config.json')
+const { whitelistlogchannel } = require('../../../config.json')
 
 module.exports = {
     customId: 'wlsform',
