@@ -1,7 +1,9 @@
 {
-	"clientId": "1033996826757570591",
-	"guildId": "1028602109907701861",
-	"token": "MTAzMzk5NjgyNjc1NzU3MDU5MQ.GkAu17.62Yi00MeqdsTGbXCRp9pmzpISnyuGsMWB0Dqlw",
+	"CHANGE-YOUR-SETTING-HERE": "owowowowowow <3",
+
+	"clientId": "<3",
+	"guildId": "<3",
+	"token": "change this",
 	"welcomeChannel": "1028602109907701864",
 	"VerifyChannel": "1098586448346763304",
 	"VerifylogChannel": "1083735142268424202",
@@ -18,7 +20,7 @@
 	"logchannel": "1099585717958619208",
 	"test": "owo",
 
-	"chatgptapi": "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",
+	"chatgptapi": "<3",
 
 	"RoleLinkChannel": "1092446938630193273",
 	"RoleLinkMsgId": "1092446978484490330",
