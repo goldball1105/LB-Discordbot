@@ -6,6 +6,7 @@ const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
 
+console.log('\x1B[37m==================================\x1B[0m')
 //====================================
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
