@@ -7,12 +7,13 @@ module.exports = {
 	execute(client) {
 		client.user.setActivity({ name: '休閒生存 :>',type: 3});
 
-        console.log(`Login : Bot ${client.user.tag}\nBotID : ${clientId}`);
-        console.log(`ServerID : ${guildId}`);
+        console.log(`\x1B[32mLogin : Bot \x1B[33m${client.user.tag}\n\x1B[32mBotID : \x1B[33m${clientId}\x1B[0m`);
+		console.log('-----------------------------')
+        console.log(`\x1B[32mServerID : \x1B${guildId}`);
 
 		const guild = client.guilds.cache.get(guildId);
 		const memberCount = guild.memberCount;
-		console.log(`伺服器中有 ${memberCount} 位成員`);
+		console.log(`\x1B[32m伺服器中有 \x1B[33m${memberCount} \x1B[32m位成員\x1B[34m`);
 
 	},
 };

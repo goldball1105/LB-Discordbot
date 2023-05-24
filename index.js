@@ -2,7 +2,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
-const { token, welcomeChannel } = require('./config.json');
+const { token } = require('./config.json');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
 
@@ -18,12 +18,13 @@ for (const folder of commandFolders) {
 		const command = require(filePath);
 		if ('data' in command && 'execute' in command) {
 			client.commands.set(command.data.name, command);
-			console.log(`成功載入 指令:[${file}]`)
+			console.log(`\x1B[32m成功載入 \x1B[34m指令:[${file}]\x1B[0m`)
 		} else {
-			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+			console.log(`\x1B[31m[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.\x1B[0m`);
 		}
 	}
 }
+console.log('\x1B[37m---------------------------------\x1B[0m')
 //====================================
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
@@ -63,11 +64,12 @@ for (const folder of actionFolders) {
 		const action = require(filePath);
 		if ('customId' in action && 'execute' in action) {
 			buttonActions[action.customId] = action;
-			console.log(`load action:[${file}]`)
+			console.log(`\x1B[32m成功載入 \x1B[36m事件:[${file}]\x1B[0m`)
 		} else {
-			console.log(`[WARNING] The action at ${filePath} is missing a required "customid" or "execute" property.`);
+			console.log(`\x1B[31m[WARNING] The action at ${filePath} is missing a required "customid" or "execute" property.`);
 		}
 	}
 }
+console.log('\x1B[37m============================\x1B[0m')
 //====================================
 client.login(token);
