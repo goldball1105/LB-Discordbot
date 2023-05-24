@@ -1,4 +1,5 @@
-const { SlashCommandBuilder, PermissionsBitField, EmbedBuilder, GuildMember, Guild, User } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
+const { EmbedBuilder } = require('@discordjs/builders')
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -6,10 +7,6 @@ module.exports = {
     .setDescription('這個伺服器目前的人數'),
 
     async execute(interaction){
-
-        if(!interaction.member.permissions.has(PermissionsBitField.Flags.SendMessages)){
-            return await interaction.reply({ content: '你沒有權限使用這個指令', ephemeral: true})
-        }
 
         let bots = false;
         interaction.guild.members.fetch().then(members => {

@@ -15,7 +15,7 @@ module.exports = {
         if (array[0] !== "vote") return;
 
         if (votemember.has(`${interaction.user.id}-${interaction.message.id}`))
-            return interaction.reply({ content: '你已經投過票了', ephemeral: true });
+            return interaction.reply({ content: '你已按過按鈕ㄌ', ephemeral: true });
 
         votemember.add(`${interaction.user.id}-${interaction.message.id}`)
 
@@ -24,9 +24,10 @@ module.exports = {
 
         const uvote = voteembed.fields[0];
         const dvote = voteembed.fields[1];
+        const avote = voteembed.fields[0];
 
-        const numberPattern = /\d+/; // 正則表達式匹配數字部分
-        let newup, newdown;
+        const numberPattern = /\d+/;
+        let newup, newdown, newa;
 
         switch (array[1]) {
             case 'up': {
@@ -50,6 +51,18 @@ module.exports = {
                 }
 
                 interaction.reply({ content: '已成功投反對此投票', ephemeral: true });
+                interaction.message.edit({ embeds: [voteembed] });
+            }
+                break;
+            case 'anc': {
+                const match = avote.value.match(numberPattern);
+                if (match) {
+                    const oldValue = parseInt(match[0]);
+                    newa = oldValue + 1;
+                    avote.value = avote.value.replace(numberPattern, newa);
+                }
+
+                interaction.reply({ content: '給你一個讚', ephemeral: true });
                 interaction.message.edit({ embeds: [voteembed] });
             }
                 break;

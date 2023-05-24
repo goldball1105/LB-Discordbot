@@ -1,26 +1,40 @@
 {
-	"clientId": "your id or token",
-	"guildId": "your id or token",
-	"token": "your id or token",
+	"CHANGE-YOUR-SETTING-HERE": "owowowowowow <3",
 
-	"welcomeChannel": "your id or token",
-	"VerifyChannel": "your id or token",
-	"whitelistChannel": "your id or token",
-	"RuleChannel": "your id or token",
-	"whitelistlogchannel": "your id or token",
-	"logchannel": "your id or token",
-
-	"//": "do what say in ./function/veritfy.js file",
-	"verifyMsgId": "your id or token",
-	"//": "samething",
-	"whitelistMsgId": "your id or token",
-
+	"clientId": "<3",
+	"guildId": "<3",
+	"token": "change this",
+	"welcomeChannel": "YOUR-ID-HERE",
+	"VerifyChannel": "YOUR-ID-HERE",
+	"VerifylogChannel": "YOUR-ID-HERE",
+	"whitelistChannel": "YOUR-ID-HERE",
+	"verifyMsgId": "YOUR-ID-HERE",
+	"whitelistMsgId": "YOUR-ID-HERE",
+	"RuleChannel": "YOUR-ID-HERE",
 	"emojiverify": "💠",
 	"emojiwhitelist": "🔗",
+	"verifyRoleone": "YOUR-ID-HERE",
+	"verifyRoletwo": "YOUR-ID-HERE",
+	"BotRoleId": "YOUR-ID-HERE",
+	"whitelistlogchannel": "YOUR-ID-HERE",
+	"logchannel": "YOUR-ID-HERE",
 
-	"verifyRoleone": "your id or token",
-	"verifyRoletwo": "your id or token",
-	"BotRoleId": "your id or token",
+	"chatgptapi": "<3",
 
-	"enjoy :)": "yeaaaaaaaaaaaaaaaaaaaaaa"
+	"RoleLinkChannel": "YOUR-ID-HERE",
+	"RoleLinkMsgId": "YOUR-ID-HERE",
+	"r1": "YOUR-ID-HERE",
+	"r2": "YOUR-ID-HERE",
+	"r3": "YOUR-ID-HERE",
+	"r4": "YOUR-ID-HERE",
+	"r5": "YOUR-ID-HERE",
+	"r1e": "📢",
+	"r2e": "🆕",
+	"r3e": "🎁",
+	"r4e": "🔨",
+	"r5e": "💡",
+	
+	"notifyId":"YOUR-ID-HERE" ,
+	"DebugMode": false
+	
 }

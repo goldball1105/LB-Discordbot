@@ -1,5 +1,5 @@
 const { channel } = require('diagnostics_channel');
-const { SlashCommandBuilder, EmbedBuilder, PermissionsBitField, Client, GuildMemberFlagsBitField, ApplicationCommandOptionType } = require('discord.js');
+const { SlashCommandBuilder, PermissionsBitField } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()

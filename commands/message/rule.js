@@ -14,7 +14,7 @@ module.exports = {
 
         const link = {
             color: 0xFF9900,
-            title: '伺服器中的身分組介紹',
+            title: '伺服器中的規則介紹',
             description: '<#1029380467226595368>'
         };
 
