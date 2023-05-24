@@ -14,11 +14,11 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('reload')
         .setDescription('重新載入指令。')
-        .addStringOption(option =>
-            option.setName('指令')
-                .setDescription('選擇要重新載入的指令。')
-                .setRequired(true)
-                .setAutocomplete(true)
+        .addStringOption(option => option
+            .setName('指令')
+            .setDescription('選擇要重新載入的指令。')
+            .setRequired(true)
+            .setAutocomplete(true)
         ),
     async autocomplete(interaction) {
         const commandsPath = path.join(__dirname, '..', '..', 'commands');
