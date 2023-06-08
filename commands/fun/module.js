@@ -2,10 +2,10 @@ const {SlashCommandBuilder} = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName('name')
-    .setDescription('description'),
+    .setName('test')
+    .setDescription('測試一下'),
 
     async execute(interaction){
-        await interaction.reply({ content: 'just a test command', ephemeral: true });
+        await interaction.reply({ content: ':PP', ephemeral: true });
     },
 };

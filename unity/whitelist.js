@@ -10,7 +10,7 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setColor(0x67c773)
             .setTitle('閱讀完以上規則了')
-            .setDescription(`> 現在你可以按下以下按鈕開始遊玩了！\n> **一定要閱讀完規則**\n> **一定要閱讀完規則**\n> **一定要閱讀完規則**\n因為很重要所以要說三次`);
+            .setDescription(`<:dt2:1111184360721367081>  現在你可以按下以下按鈕開始遊玩了！\n> **一定要閱讀完規則**\n> **一定要閱讀完規則**\n> **一定要閱讀完規則**\n因為很重要所以要說三次`);
 
         const button = new ButtonBuilder()
             .setCustomId('wlform')

@@ -8,6 +8,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 console.log('\x1B[37m===============================================\x1B[0m')
 //====================================
+let c_count = 0;
 client.commands = new Collection();
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -21,12 +22,13 @@ for (const folder of commandFolders) {
 		if ('data' in command && 'execute' in command) {
 			client.commands.set(command.data.name, command);
 			console.log(`\x1B[30m├─\x1B[32m成功載入 \x1B[34m指令:[${file}]\x1B[0m`)
+			c_count++
 		} else {
 			console.log(`\─x1B[31m[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.\x1B[0m`);
 		}
 	}
 }
-console.log('\x1B[37m---------------------------------\x1B[0m')
+console.log(`\x1B[37m-----------已成功載入[${c_count}]個指令-----------\x1B[0m`)
 //====================================
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
@@ -58,6 +60,8 @@ const buttonActions = {};
 const ActionFolderPath = path.join(__dirname, '.', 'unity', 'action');
 const actionFolders = fs.readdirSync(ActionFolderPath);
 
+let a_count = 0;
+
 for (const folder of actionFolders) {
 	const actionPath = path.join(ActionFolderPath, folder);
 	const actionFiles = fs.readdirSync(actionPath).filter(file => file.endsWith('.js'));
@@ -68,11 +72,13 @@ for (const folder of actionFolders) {
 		if ('customId' in action && 'execute' in action) {
 			buttonActions[action.customId] = action;
 			console.log(`\x1B[30m├─\x1B[32m成功載入 \x1B[36m事件:[${file}]\x1B[0m`)
+			a_count++
 		} else {
 			console.log(`\x1B[31m[WARNING] The action at ${filePath} is missing a required "customid" or "execute" property.`);
 		}
 	}
 }
+console.log(`\x1B[37m-----------已成功載入[${a_count}]個事件-----------\x1B[0m`)
 console.log('\x1B[37m============================\x1B[0m')
 //====================================
 client.login(token);
